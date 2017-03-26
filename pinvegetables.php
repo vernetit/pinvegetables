@@ -112,16 +112,13 @@ if($_GET["q"]=="") die();
     //echo $numberQuery[$i];
     $vocales="[aeiouháéíóu]{0,}";
 
-    if(intval($numberQuery[$i-1])==4)
+    if(@intval($numberQuery[$i-1])==4)
      $vocales="[aeiouáéíóu]{0,}";
 
     $poner.=$vocales.$sustituir[$j.""];
 
    }
   }
-  
-
-
  }
  $vocales="[aeiouháéíóu]{0,}";
 
@@ -160,9 +157,9 @@ if($_GET["q"]=="") die();
  <meta name="description" content="Crea tu sistema mayor!">
  <meta name="keywords" content="sistema mayor, casillero mental, pao">
 
- <script src='js/jquery.min.js'></script>
- <script src="js/underscore-min.js"></script>
- <script src="js/jquery.tabSlideOut.js"></script>
+ <script src='/pinvegetables/js/jquery.min.js'></script>
+ <script src="/pinvegetables/js/underscore-min.js"></script>
+ <script src="/pinvegetables/js/jquery.tabSlideOut.js"></script>
 
   <link rel="stylesheet" href="js/jquery.tabSlideOut.css"> 
   <style type="text/css">
@@ -315,9 +312,9 @@ function buscar(){
  if(isNaN(txt)){ console.log("not number"); return; }
  if(txt.length==0){ console.log("empty"); return; }
 
- $("#screen").html(`<img src="/img/loading.gif">`)
+ $("#screen").html(`<img src="/pinvegetables/img/loading.gif">`)
  
- $.ajax({url: "/pinvegetables?q="+$("#searchQuery").val(), success: function(result){
+ $.ajax({url: "/pinvegetables/pinvegetables.php?q="+$("#searchQuery").val(), success: function(result){
      //console.log(result);
      //arrayImages1=JSON.parse(result);
      //arrayPreloadImages = _.union(arrayImages,arrayImages1);
